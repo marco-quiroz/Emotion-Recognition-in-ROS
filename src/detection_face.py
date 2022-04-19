@@ -34,7 +34,6 @@ class Face_Recognition:
     
     
     frame = cv_image
-    frame =  imutils.resize(frame, width=640)
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     auxFrame = gray.copy()
 
