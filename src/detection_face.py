@@ -15,7 +15,7 @@ Emotions = ["angry", "happy", "sad", "surprise"]
 
 
 # LBPH - Face Recognition
-face_recognizer = cv2.face.LBPHFaceRecognizer_create()
+face_recognizer = cv2.face.LBPHFaceRecognizer_create() # We create the function - LBPH
 face_recognizer.read('/home/marco/pepper_sim_ws/src/dataset/modeloLBPHFace.xml')
 
 # Opencv-Haar-Cascade Classifier - Face Detection
