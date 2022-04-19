@@ -11,23 +11,20 @@ import os
 import imutils
 
 
-imagePaths = ["angry", "happy", "sad", "surprise"]
+Emotions = ["angry", "happy", "sad", "surprise"]
 
 
+# LBPH - Face Recognition
 face_recognizer = cv2.face.LBPHFaceRecognizer_create()
-
-# Leyendo el modelo
 face_recognizer.read('/home/marco/pepper_sim_ws/src/dataset/modeloLBPHFace.xml')
 
+# Opencv-Haar-Cascade Classifier - Face Detection
 faceClassif = cv2.CascadeClassifier('/home/marco/pepper_sim_ws/src/dataset/haarcascade_frontalface_default.xml')
-# face_recognizer = cv2.face.LBPHFaceRecognizer_create()
 
 
-class image_converter:
+class Face_Recognition:
 
   def __init__(self):
-    #self.image_pub = rospy.Publisher("image_topic_2",Image)
-
     self.bridge = CvBridge()
     self.image_sub = rospy.Subscriber("/pepper/camera/front/image_raw",Image,self.callback)
 
@@ -48,23 +45,14 @@ class image_converter:
       rostro = cv2.resize(rostro,(150,150),interpolation= cv2.INTER_CUBIC)
       result = face_recognizer.predict(rostro)
       cv2.putText(frame,'{}'.format(result),(x,y-5),1,1.3,(255,255,0),1,cv2.LINE_AA)
+	
       if result[1] < 70:
-        cv2.putText(frame,'{}'.format(imagePaths[result[0]]),(x,y-25),2,0.5,(0,255,0),1,cv2.LINE_AA)
+        cv2.putText(frame,'{}'.format(Emotions[result[0]]),(x,y-25),2,0.5,(0,255,0),1,cv2.LINE_AA)
         cv2.rectangle(frame, (x,y),(x+w,y+h),(0,255,0),2)
       else:
         cv2.putText(frame,'Desconocido',(x,y-20),2,0.5,(0,0,255),1,cv2.LINE_AA)
         cv2.rectangle(frame, (x,y),(x+w,y+h),(0,0,255),2)
 
-
-
-      #if h*w < 1800: 
-	      #cv2.rectangle(frame, (x,y),(x+w,y+h),(0,255,0),3)
-
-	    # rostro = auxFrame[y:y+h,x:x+w]
-	    #area=h*w
-	    #cv2.putText(frame,str(area), (x, y), cv2.FONT_ITALIC, 0.75, (255, 0, 0), 2)
-
-	# rostro = cv2.resize(rostro,(150,150),interpolation=cv2.INTER_CUBIC)
 		
     cv2.imshow("Image window",frame)
     cv2.waitKey(1)
@@ -72,8 +60,8 @@ class image_converter:
     
 
 def main(args):
-  ic = image_converter()
-  rospy.init_node('image_converter', anonymous=True)
+  ic = Face_Recognition()
+  rospy.init_node('Face_Recognition', anonymous=True)
   try:
     rospy.spin()
   except KeyboardInterrupt:
