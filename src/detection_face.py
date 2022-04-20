@@ -16,10 +16,10 @@ Emotions = ["angry", "happy", "sad", "surprise"]
 
 # LBPH - Face Recognition
 face_recognizer = cv2.face.LBPHFaceRecognizer_create() # We create the function - LBPH
-face_recognizer.read('/home/marco/pepper_sim_ws/src/dataset/modeloLBPHFace.xml')
+face_recognizer.read('/home/marco/pepper_sim_ws/src/Emotion_Recognition/modeloLBPHFace.xml')
 
 # Opencv-Haar-Cascade Classifier - Face Detection
-faceClassif = cv2.CascadeClassifier('/home/marco/pepper_sim_ws/src/dataset/haarcascade_frontalface_default.xml')
+faceClassif = cv2.CascadeClassifier('/home/marco/pepper_sim_ws/src/Emotion_Recognition/models/haarcascade_frontalface_default.xml')
 
 
 class Face_Recognition:
@@ -42,7 +42,7 @@ class Face_Recognition:
     for (x,y,w,h) in faces:
       face = auxFrame[y:y+h,x:x+w]
       face = cv2.resize(face,(150,150),interpolation= cv2.INTER_CUBIC)
-      result = face_recognizer.predict(rostro)
+      result = face_recognizer.predict(face)
       cv2.putText(frame,'{}'.format(result),(x,y-5),1,1.3,(255,255,0),1,cv2.LINE_AA)
 	
       if result[1] < 70:
