@@ -30,10 +30,8 @@ class Face_Recognition:
 
   def callback(self,data):
     
-    cv_image = self.bridge.imgmsg_to_cv2(data, "bgr8")
+    frame = self.bridge.imgmsg_to_cv2(data, "bgr8")
     
-    
-    frame = cv_image
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     auxFrame = gray.copy()
 
