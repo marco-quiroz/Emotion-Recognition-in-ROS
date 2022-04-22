@@ -1,0 +1,3269 @@
+<?xml version="1.0"?>
+<sdf version='1.6'>
+  <world name='default'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose frame=''>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <contact>
+              <collide_bitmask>65535</collide_bitmask>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics name='default_physics' default='0' type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <audio>
+      <device>default</device>
+    </audio>
+    <wind/>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <model name='cafe'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='main_floor'>
+          <pose frame=''>-0.4 -0.75 0.0948 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>9.38 22.63 0.19</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='wall_1'>
+          <pose frame=''>-5.03 0.53 1.415 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.12 23.16 2.83</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='wall_2'>
+          <pose frame=''>4.24 -0.31 1.415 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.12 21.48 2.83</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='wall_3'>
+          <pose frame=''>-1.48 7.43 1.415 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>7.2 0.12 2.83</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='wall_4'>
+          <pose frame=''>2.09 8.9 1.435 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.12 3.05 2.87</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='wall_5'>
+          <pose frame=''>3.155 10.4 1.435 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2.13 0.12 2.87</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='wall_6'>
+          <pose frame=''>0.615 -10.98 1.415 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>7.36 0.15 2.83</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='wall_7'>
+          <pose frame=''>-4.62 -10.98 1.415 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.93 0.15 2.83</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='wall_8'>
+          <pose frame=''>-3.61 -10.98 2.69 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>1.09 0.15 0.28</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='coke'>
+          <pose frame=''>-4.385 0.26 0.95 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>1.03 1.03 1.52</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://cafe/meshes/cafe.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0.03436 0.058026 0 0 -0 0</pose>
+    </model>
+    <model name='ale11'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale11/meshes/ale11.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale11/meshes/ale11.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-2.78466 -0.866607 0 0 -0 0</pose>
+    </model>
+    <model name='ale5'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale5/meshes/ale5.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale5/meshes/ale5.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-2.78372 -2.62275 0 0 -0 0</pose>
+    </model>
+    <model name='ale12'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale12/meshes/ale12.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale12/meshes/ale12.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-3.54653 -1.81678 0 0 -0 0</pose>
+    </model>
+    <model name='ale11_0'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale11/meshes/ale11.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale11/meshes/ale11.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-0.361788 6.17325 0 0 -0 0</pose>
+    </model>
+    <model name='ale12_0'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale12/meshes/ale12.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale12/meshes/ale12.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0.333303 6.57552 0 0 -0 0</pose>
+    </model>
+    <model name='ale11_1'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale11/meshes/ale11.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale11/meshes/ale11.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>1.29611 6.59877 0 0 -0 0</pose>
+    </model>
+    <model name='ale2'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale2/meshes/ale2.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale2/meshes/ale2.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-0.504874 5.31792 0 0 -0 0</pose>
+    </model>
+    <model name='ale4'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale4/meshes/ale4.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale4/meshes/ale4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>1.94484 5.86651 0 0 -0 0</pose>
+    </model>
+    <model name='ale11_2'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale11/meshes/ale11.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale11/meshes/ale11.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>3.47227 3.09415 0 0 -0 0</pose>
+    </model>
+    <model name='ale10'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale10/meshes/ale10.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale10/meshes/ale10.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>3.49477 2.39683 0 0 -0 0</pose>
+    </model>
+    <model name='ale10_1'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale10/meshes/ale10.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale10/meshes/ale10.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-3.79019 -4.98909 0 0 -0 0</pose>
+    </model>
+    <model name='ale11_3'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale11/meshes/ale11.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale11/meshes/ale11.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-3.40115 -4.09284 0 0 -0 0</pose>
+    </model>
+    <model name='ale12_2'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale12/meshes/ale12.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale12/meshes/ale12.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-3.32216 -5.55225 0 0 -0 0</pose>
+    </model>
+    <model name='ale4_0'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale4/meshes/ale4.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale4/meshes/ale4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-4.47785 -8.20913 0 0 -0 0</pose>
+    </model>
+    <model name='ale11_4'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale11/meshes/ale11.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale11/meshes/ale11.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-4.15615 -7.4273 0 0 -0 0</pose>
+    </model>
+    <model name='ale1'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale1/meshes/ale1.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale1/meshes/ale1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-4.11293 -8.96254 0 0 -0 0</pose>
+    </model>
+    <model name='ale2_0'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale2/meshes/ale2.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale2/meshes/ale2.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-0.920061 -9.96549 0 0 -0 0</pose>
+    </model>
+    <model name='ale10_2'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale10/meshes/ale10.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale10/meshes/ale10.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-1.50135 -9.60816 0 0 -0 0</pose>
+    </model>
+    <model name='ale12_3'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale12/meshes/ale12.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale12/meshes/ale12.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-0.278385 -9.50565 0 0 -0 0</pose>
+    </model>
+    <model name='ale2_1'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale2/meshes/ale2.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale2/meshes/ale2.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>3.6755 -10.4761 0 0 -0 0</pose>
+    </model>
+    <model name='ale10_0'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale10/meshes/ale10.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale10/meshes/ale10.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>2.96188 -10.5889 0 0 -0 0</pose>
+    </model>
+    <model name='ale12_1'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale12/meshes/ale12.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale12/meshes/ale12.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>3.74284 -9.64312 0 0 -0 0</pose>
+    </model>
+    <model name='ale10_3'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale10/meshes/ale10.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale10/meshes/ale10.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>3.39578 -7.24207 0 0 -0 0</pose>
+    </model>
+    <model name='ale12_4'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale12/meshes/ale12.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale12/meshes/ale12.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>3.78864 -6.58197 0 0 -0 0</pose>
+    </model>
+    <model name='ale3'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale3/meshes/ale3.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale3/meshes/ale3.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>3.47665 -5.98295 0 0 -0 0</pose>
+    </model>
+    <model name='ale8'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale8/meshes/ale8.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale8/meshes/ale8.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>3.30683 0.711101 0 0 -0 0</pose>
+    </model>
+    <model name='ale5_0'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale5/meshes/ale5.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale5/meshes/ale5.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>2.59812 -2.14554 0 0 -0 0</pose>
+    </model>
+    <model name='ale7'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale7/meshes/ale7.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale7/meshes/ale7.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>2.62794 -3.38641 0 0 -0 0</pose>
+    </model>
+    <model name='ale10_4'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale10/meshes/ale10.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale10/meshes/ale10.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>3.38674 -2.66093 0 0 -0 0</pose>
+    </model>
+    <model name='ale3_0'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale3/meshes/ale3.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale3/meshes/ale3.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-3.87419 2.09771 0 0 -0 0</pose>
+    </model>
+    <model name='ale2_2'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale2/meshes/ale2.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale2/meshes/ale2.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-3.74602 3.01334 0 0 -0 0</pose>
+    </model>
+    <model name='ale4_1'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale4/meshes/ale4.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale4/meshes/ale4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-2.83036 2.68371 0 0 -0 0</pose>
+    </model>
+    <model name='ale4_2'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale4/meshes/ale4.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale4/meshes/ale4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-1.21887 2.15265 0 0 -0 0</pose>
+    </model>
+    <model name='ale2_3'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale2/meshes/ale2.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale2/meshes/ale2.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-0.120125 2.68346 0 0 -0 0</pose>
+    </model>
+    <model name='ale4_3'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale4/meshes/ale4.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale4/meshes/ale4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-0.761082 3.06806 0 0 -0 0</pose>
+    </model>
+    <model name='ale12_5'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.88</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose frame=''>0 0 0.01 0 -0 1.57</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale12/meshes/ale12.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0 -0 1.57</pose>
+          <geometry>
+            <mesh>
+              <uri>model://ale12/meshes/ale12.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>3.27994 -0.108872 0 0 -0 0</pose>
+    </model>
+    <light name='user_spot_light_0' type='spot'>
+      <pose frame=''>2.23305 0.342917 1 0 -0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0 0 -1</direction>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <spot>
+        <inner_angle>0.6</inner_angle>
+        <outer_angle>1</outer_angle>
+        <falloff>1</falloff>
+      </spot>
+    </light>
+    <light name='user_point_light_0' type='point'>
+      <pose frame=''>-0.987495 -8.87268 1 0 -0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <direction>0 0 -1</direction>
+    </light>
+    <state world_name='default'>
+      <sim_time>1363 996000000</sim_time>
+      <real_time>1469 190784027</real_time>
+      <wall_time>1650033242 310308581</wall_time>
+      <iterations>1363996</iterations>
+      <model name='ale1'>
+        <pose frame=''>-4.07823 -8.89918 0.089801 2e-06 1e-06 1.0725</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-4.07823 -8.89918 0.089801 2e-06 1e-06 1.0725</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-1.57748 -0.593542 -0.409949 -2.56487 -1.44256 -3.10414</acceleration>
+          <wrench>-126.198 -47.4834 -32.796 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale10'>
+        <pose frame=''>3.303 2.38568 0.089802 6e-06 -1e-06 2.69299</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>3.303 2.38568 0.089802 6e-06 -1e-06 2.69299</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-2.25688 -0.61396 3.30282 -2.4724 -0.681594 3.02656</acceleration>
+          <wrench>-180.551 -49.1168 264.226 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale10_0'>
+        <pose frame=''>2.96201 -10.5887 0.089803 -1.2e-05 0 1.43615</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>2.96201 -10.5887 0.089803 -1.2e-05 0 1.43615</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>2.52079 0.854681 -1.09678 2.30245 0.395989 -3.09044</acceleration>
+          <wrench>201.663 68.3744 -87.7425 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale10_1'>
+        <pose frame=''>-3.79007 -4.98929 0.0898 0 -0 0.001861</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-3.79007 -4.98929 0.0898 0 -0 0.001861</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0.356564 -0.250396 -0.026697 0.263551 -0.375313 -3.9e-05</acceleration>
+          <wrench>-28.5251 -20.0317 -2.13579 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale10_2'>
+        <pose frame=''>-1.50089 -9.60963 0.0898 0 -0 0.369015</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-1.50089 -9.60963 0.0898 0 -0 0.369015</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.50837 -2.06594 0.281849 2.17991 0.558559 -0.036577</acceleration>
+          <wrench>40.6696 -165.275 22.548 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale10_3'>
+        <pose frame=''>3.39579 -7.24198 0.089802 1e-05 2e-06 2.42169</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>3.39579 -7.24198 0.089802 1e-05 2e-06 2.42169</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-1.31529 0.011117 -2.48382 0.014104 -1.39883 -0.038031</acceleration>
+          <wrench>-105.224 0.889341 -198.706 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale10_4'>
+        <pose frame=''>3.38676 -2.66096 0.089802 8e-06 -1e-06 -3.12568</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>3.38676 -2.66096 0.089802 8e-06 -1e-06 -3.12568</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-1.26063 -1.1202 -0.409123 1.18524 -1.32035 -0.037577</acceleration>
+          <wrench>-100.851 -89.6157 -32.7299 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale11'>
+        <pose frame=''>-2.98008 -1.022 0.0898 -0 -1e-06 -0.882712</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-2.98008 -1.022 0.0898 -0 -1e-06 -0.882712</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0.82509 1.0018 -0.23943 -1.01918 -0.869136 -4.1e-05</acceleration>
+          <wrench>-66.0072 80.1443 -19.1544 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale11_0'>
+        <pose frame=''>-0.253763 6.02704 0.089801 -2e-06 2e-06 -0.931841</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-0.253763 6.02704 0.089801 -2e-06 2e-06 -0.931841</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-3.66791 -0.644927 2.38758 -2.35248 0.816175 -3.11159</acceleration>
+          <wrench>-293.433 -51.5942 191.006 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale11_1'>
+        <pose frame=''>1.23134 6.31456 0.0898 3e-06 1e-06 -1.81363</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>1.23134 6.31456 0.0898 3e-06 1e-06 -1.81363</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-2.19734 1.86935 -0.38566 1.24355 -0.748975 3.0626</acceleration>
+          <wrench>-175.787 149.548 -30.8528 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale11_2'>
+        <pose frame=''>3.36906 3.13349 0.089799 2e-06 -3e-06 -2.91216</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>3.36906 3.13349 0.089799 2e-06 -3e-06 -2.91216</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.615271 2.58911 -1.09713 -2.72086 0.608343 -0.051089</acceleration>
+          <wrench>49.2217 207.129 -87.7704 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale11_3'>
+        <pose frame=''>-3.44032 -4.2488 0.089802 6e-06 -2e-06 -0.982642</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-3.44032 -4.2488 0.089802 6e-06 -2e-06 -0.982642</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>2.24272 -0.615953 3.23762 -2.50661 0.680524 3.0206</acceleration>
+          <wrench>179.417 -49.2762 259.009 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale11_4'>
+        <pose frame=''>-4.15629 -7.42739 0.0898 0 2e-06 -0.902799</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-4.15629 -7.42739 0.0898 0 2e-06 -0.902799</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.801406 -1.02228 -0.239916 1.04016 0.84405 5e-05</acceleration>
+          <wrench>64.1125 -81.782 -19.1933 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale12'>
+        <pose frame=''>-3.54636 -1.81704 0.089801 7e-06 2e-06 0.002319</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-3.54636 -1.81704 0.089801 7e-06 2e-06 0.002319</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>1.13846 0.98627 -1.42662 -1.03274 1.18929 -0.044775</acceleration>
+          <wrench>91.0768 78.9016 -114.13 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale12_0'>
+        <pose frame=''>0.371745 6.45797 0.0898 0 -1e-06 -1.25219</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0.371745 6.45797 0.0898 0 -1e-06 -1.25219</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0.387421 1.20025 -0.509323 -1.22151 -0.408291 -0.001657</acceleration>
+          <wrench>-30.9937 96.0197 -40.7459 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale12_1'>
+        <pose frame=''>3.74289 -9.64302 0.0898 2e-06 2e-06 -2.86693</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>3.74289 -9.64302 0.0898 2e-06 2e-06 -2.86693</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0.876302 -1.32403 -0.971042 1.37622 -0.905569 -0.045777</acceleration>
+          <wrench>-70.1042 -105.922 -77.6833 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale12_2'>
+        <pose frame=''>-3.32192 -5.55197 0.089801 5e-06 2e-06 1.11355</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-3.32192 -5.55197 0.089801 5e-06 2e-06 1.11355</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0.364475 1.40784 -1.7021 -1.44592 -0.421379 -0.032361</acceleration>
+          <wrench>-29.158 112.627 -136.168 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale12_3'>
+        <pose frame=''>-0.322521 -9.58817 0.0898 -1e-06 -0 2.65395</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-0.322521 -9.58817 0.0898 -1e-06 -0 2.65395</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.307585 3.071 0.614307 3.05987 0.327287 -0.13546</acceleration>
+          <wrench>24.6068 245.68 49.1446 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale12_4'>
+        <pose frame=''>3.78856 -6.58187 0.0898 -0 -2e-06 3.08597</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>3.78856 -6.58187 0.0898 -0 -2e-06 3.08597</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>1.19873 -1.15843 -0.513778 1.22256 1.25323 0.037773</acceleration>
+          <wrench>95.8985 -92.6745 -41.1023 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale12_5'>
+        <pose frame=''>3.27995 -0.108854 0.089801 0 -3e-06 2.50769</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>3.27995 -0.108854 0.089801 0 -3e-06 2.50769</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-1.57551 -0.121077 -1.00102 -2.98021 -1.46177 3.10658</acceleration>
+          <wrench>-126.041 -9.68617 -80.0819 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale2'>
+        <pose frame=''>-0.504713 5.31768 0.089801 -2e-06 -3e-06 0.002225</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-0.504713 5.31768 0.089801 -2e-06 -3e-06 0.002225</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>1.47306 -2.94976 0.987613 3.12135 1.53838 0.087202</acceleration>
+          <wrench>117.845 -235.98 79.0091 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale2_0'>
+        <pose frame=''>-0.91989 -9.96536 0.0898 2e-06 -2e-06 1.54982</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-0.91989 -9.96536 0.0898 2e-06 -2e-06 1.54982</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-1.0511 -1.16602 -1.05403 1.18061 -1.14987 0.034901</acceleration>
+          <wrench>-84.0878 -93.2819 -84.3223 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale2_1'>
+        <pose frame=''>3.67552 -10.476 0.089803 0 -1.5e-05 2.44385</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>3.67552 -10.476 0.089803 0 -1.5e-05 2.44385</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0.9953 0.834566 -0.23974 -0.848899 -1.04815 0.000115</acceleration>
+          <wrench>-79.624 66.7653 -19.1792 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale2_2'>
+        <pose frame=''>-3.6641 2.90028 0.0898 3e-06 4e-06 -0.943047</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-3.6641 2.90028 0.0898 3e-06 4e-06 -0.943047</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-2.31855 -0.385907 -2.1142 -2.68608 -0.643915 3.09918</acceleration>
+          <wrench>-185.484 -30.8725 -169.136 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale2_3'>
+        <pose frame=''>0.029675 2.88368 0.089801 5e-06 -0 -2.213</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0.029675 2.88368 0.089801 5e-06 -0 -2.213</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>1.70102 -0.225406 3.03837 -2.92345 1.21545 -2.89535</acceleration>
+          <wrench>136.082 -18.0325 243.069 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale3'>
+        <pose frame=''>3.4765 -5.98306 0.089801 2e-06 3e-06 -2.14955</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>3.4765 -5.98306 0.089801 2e-06 3e-06 -2.14955</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>1.90148 0.545656 1.2218 2.6221 1.09706 -3.09833</acceleration>
+          <wrench>152.118 43.6525 97.7442 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale3_0'>
+        <pose frame=''>-3.87421 2.09764 0.089801 2e-06 -2e-06 0.277845</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-3.87421 2.09764 0.089801 2e-06 -2e-06 0.277845</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.899911 1.36647 -0.689011 -1.43121 0.929763 -0.036344</acceleration>
+          <wrench>71.9928 109.318 -55.1209 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale4'>
+        <pose frame=''>1.93864 5.86454 0.0898 0 -1e-06 -2.75791</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>1.93864 5.86454 0.0898 0 -1e-06 -2.75791</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-2.35188 1.86661 0.998041 0.997723 -0.639075 -3.08662</acceleration>
+          <wrench>-188.151 149.329 79.8433 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale4_0'>
+        <pose frame=''>-4.38178 -8.22256 0.089801 2e-06 -7e-06 -0.064291</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-4.38178 -8.22256 0.089801 2e-06 -7e-06 -0.064291</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.983494 -2.34393 -1.49199 2.46916 1.00959 0.046209</acceleration>
+          <wrench>78.6796 -187.515 -119.359 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale4_1'>
+        <pose frame=''>-2.83038 2.68374 0.089802 4e-06 -6e-06 -2.41564</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-2.83038 2.68374 0.089802 4e-06 -6e-06 -2.41564</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0.198013 -1.46608 -1.56208 1.51844 -0.178236 -0.032808</acceleration>
+          <wrench>-15.841 -117.286 -124.966 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale4_2'>
+        <pose frame=''>-1.01305 2.17829 0.0898 0 -0 0.23374</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-1.01305 2.17829 0.0898 0 -0 0.23374</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0.896337 -1.99958 0.036619 2.10537 -0.933233 -0.052972</acceleration>
+          <wrench>-71.707 -159.966 2.92956 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale4_3'>
+        <pose frame=''>-0.709361 2.98365 0.0898 3e-06 -3e-06 -1.02046</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-0.709361 2.98365 0.0898 3e-06 -3e-06 -1.02046</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-1.3628 -2.17919 -1.39732 2.24894 -1.52141 0.046188</acceleration>
+          <wrench>-109.024 -174.335 -111.785 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale5'>
+        <pose frame=''>-2.98627 -2.49315 0.0898 1e-06 1e-06 1.00524</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-2.98627 -2.49315 0.0898 1e-06 1e-06 1.00524</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.53546 -0.12077 0.108619 0.147562 0.567692 0.139981</acceleration>
+          <wrench>42.8368 -9.66163 8.68951 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale5_0'>
+        <pose frame=''>2.84785 -2.03322 0.089799 2e-06 -2e-06 -1.74921</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>2.84785 -2.03322 0.089799 2e-06 -2e-06 -1.74921</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-2.10888 1.57451 -1.20276 1.54819 -0.834735 3.09669</acceleration>
+          <wrench>-168.71 125.961 -96.221 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale7'>
+        <pose frame=''>2.87748 -3.26244 0.089799 -3e-06 3e-06 2.03228</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>2.87748 -3.26244 0.089799 -3e-06 3e-06 2.03228</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-1.55415 0.654748 -0.409281 2.50111 -1.46615 3.10417</acceleration>
+          <wrench>-124.332 52.3798 -32.7425 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ale8'>
+        <pose frame=''>3.30689 0.711028 0.089805 1.8e-05 -6e-06 -2.54631</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>3.30689 0.711028 0.089805 1.8e-05 -6e-06 -2.54631</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0.441608 -1.62747 -0.409212 1.69047 -0.434653 -0.037692</acceleration>
+          <wrench>-35.3286 -130.197 -32.7369 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='cafe'>
+        <pose frame=''>0.04969 -0.053416 -0.1 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0.04969 -0.053416 -0.1 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ground_plane'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose frame=''>0 0 10 0 -0 0</pose>
+      </light>
+      <light name='user_point_light_0'>
+        <pose frame=''>-0.987495 -8.87268 1 0 -0 0</pose>
+      </light>
+      <light name='user_spot_light_0'>
+        <pose frame=''>2.23305 0.342917 1 0 -0 0</pose>
+      </light>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>-8.01763 -1.43178 20.6867 -0 1.2548 -0.180001</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+  </world>
+</sdf>
